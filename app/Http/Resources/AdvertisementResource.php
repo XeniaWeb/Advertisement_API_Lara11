@@ -19,9 +19,9 @@ class AdvertisementResource extends JsonResource
             'title' => $this->title,
             'image' => $this->images[0],
             'price' => $this->price/100,
-            'description' => $this->when($request->is('api/categories*'), function () use ($request) {
-                if ($request->is('api/categories')) {
-                    return str($this->description)->limit(20);
+            'description' => $this->when($request->is('api/v1/ads'), function () use ($request) {
+                if ($request->is('api/v1/ads')) {
+                    return str($this->description)->limit(50);
                 };
 
                 return $this->description;

@@ -16,7 +16,9 @@ class AdvertisementController extends Controller
      */
     public function index(): AnonymousResourceCollection
     {
-        return AdvertisementResource::collection(Advertisement::paginate(10));
+        $ads = Advertisement::paginate(10);
+
+        return AdvertisementResource::collection($ads);
     }
 
     /**
