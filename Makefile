@@ -62,3 +62,28 @@ tests: ## Run all tests
 
 tests-html: ## Run tests and generate coverage. Report found in reports/index.html
 	#docker exec ${CONTAINER_PHP} php -d zend_extension=xdebug.so -d xdebug.mode=coverage ./vendor/bin/phpunit --coverage-html reports
+
+am: ## Make something with artisan - make am c="model"
+	@./vendor/bin/sail artisan make:$(c)
+
+amc: ## Make controller with artisan
+	@./vendor/bin/sail artisan make:controller
+
+amcr: ## Make controller as resource with artisan
+	@./vendor/bin/sail artisan make:controller -r --model=$(c)
+
+amm: ## Make model with artisan
+	@./vendor/bin/sail artisan make:model
+
+amma: ## Make model with artisan
+	@./vendor/bin/sail artisan make:model --all
+
+ammg: ## Make migration with artisan
+	@./vendor/bin/sail artisan make:migration
+
+amrs: ## Make resource with artisan
+	@./vendor/bin/sail artisan make:resource
+
+amrq: ## Make request with artisan
+	@./vendor/bin/sail artisan make:request
+
