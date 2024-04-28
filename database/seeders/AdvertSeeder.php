@@ -1,18 +1,20 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Database\Seeders;
 
-use App\Models\Advertisement;
+use App\Models\Advert;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
-class AdvertisementSeeder extends Seeder
+class AdvertSeeder extends Seeder
 {
     /**
      * Run the database seeds.
      */
     public function run(): void
     {
-        Advertisement::factory()->count(26)->create();
+        Advert::factory()->count(26)->create();
     }
 }

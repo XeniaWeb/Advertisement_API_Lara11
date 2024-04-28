@@ -1,20 +1,17 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Database\Factories;
 
-use App\Models\Advertisement;
+use App\Models\Advert;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends Factory<Advertisement>
+ * @extends Factory<Advert>
  */
-class AdvertisementFactory extends Factory
+class AdvertFactory extends Factory
 {
-    /**
-     * Define the model's default state.
-     *
-     * @return array<string, mixed>
-     */
     public function definition(): array
     {
         return [
